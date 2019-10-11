@@ -1,53 +1,62 @@
 {
-    "name": "vsc-postman-logs-syntax",
-    "displayName": "Postman Log Syntax Highlighter",
-    "description": "",
-    "version": "0.0.1",
-    "icon": "Postman-Logs.png",
-    "license": "MIT",
-    "publisher": "xk0der",
-    "author": { 
-        "name": "xk0der",
-        "email": "amit@xkoder.com",
-        "url": "https://xkoder.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/xk0der/vscode-postman-log-syntax.git"
-    },
-    "keywords": [ "Postman", "log", "syntax"],
-    "engines": {
-        "vscode": "^1.36.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "activationEvents": [
-        "onLanguage:postman_log",
-        "onLanguage:log",
-        "onLanguage:plaintext"
-    ],
-    "main": "extension.js",
-    "contributes": {
-        "languages": [
-            {
-                "id": "postman_log",
-                "aliases": [
-                    "Postman Log",
-                    "postmanlog"
-                ],
-                "extensions": [
-                    ".postman.log"
-                ],
-                "configuration": "./postman_log-language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "postman_log",
-                "scopeName": "source.postman_log",
-                "path": "./syntaxes/log.tmLanguage.json"
-            }
-        ]
-    }
+	"name": "vsc-postman-logs-syntax",
+	"displayName": "Postman Log Syntax Highlighter",
+	"description": "",
+	"version": "0.0.1",
+	"icon": "Postman-Logs.png",
+	"license": "MIT",
+	"publisher": "xk0der",
+	"author": {
+		"name": "xk0der",
+		"email": "amit@xkoder.com",
+		"url": "https://xkoder.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xk0der/vscode-postman-log-syntax.git"
+	},
+	"keywords": [
+		"Postman",
+		"log",
+		"syntax"
+	],
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onLanguage:postman_log",
+		"onLanguage:log",
+		"onLanguage:plaintext"
+	],
+	"main": "extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "postman_log",
+				"aliases": [
+					"Postman Log",
+					"postmanlog"
+				],
+				"extensions": [
+					".postman.log"
+				],
+				"configuration": "./postman_log-language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "postman_log",
+				"scopeName": "source.postman_log",
+				"path": "./syntaxes/log.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "3efaa702-0c5d-4be7-b93f-112fc713dbbf",
+		"publisherDisplayName": "xk0der",
+		"publisherId": "86cc274d-620e-41f3-a64d-1ebe0270f7e0"
+	}
 }
