@@ -1,0 +1,45 @@
+{
+    "name": "vsc-postman-logs-syntax",
+    "displayName": "Postman Log Syntax Highlighter",
+    "description": "",
+    "version": "0.0.1",
+    "icon": "Postman-Logs.png",
+    "author": { 
+        "name": "xk0der",
+        "email": "amit@xkoder.com",
+        "url": "https://xkoder.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xk0der/vscode-postman-log-syntax.git"
+    },
+    "keywords": [ "Postman", "log", "syntax"],
+    "engines": {
+        "vscode": "^1.36.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "postman_log",
+                "aliases": [
+                    "Postman Log",
+                    "postmanlog"
+                ],
+                "extensions": [
+                    ".log"
+                ],
+                "configuration": "./postman_log-language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "postman_log",
+                "scopeName": "source.postman_log",
+                "path": "./syntaxes/log.tmLanguage.json"
+            }
+        ]
+    }
+}
