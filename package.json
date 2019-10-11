@@ -20,6 +20,12 @@
     "categories": [
         "Programming Languages"
     ],
+    "activationEvents": [
+        "onLanguage:postman_log",
+        "onLanguage:log",
+        "onLanguage:plaintext"
+    ],
+    "main": "extension.js",
     "contributes": {
         "languages": [
             {
@@ -29,7 +35,7 @@
                     "postmanlog"
                 ],
                 "extensions": [
-                    ".log"
+                    ".postman.log"
                 ],
                 "configuration": "./postman_log-language-configuration.json"
             }
