@@ -2,7 +2,7 @@
 	"name": "vsc-postman-logs-syntax",
 	"displayName": "Postman Log Syntax Highlighter",
 	"description": "",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"icon": "Postman-Logs.png",
 	"license": "MIT",
 	"publisher": "xk0der",
