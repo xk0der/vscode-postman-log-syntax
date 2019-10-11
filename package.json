@@ -4,6 +4,8 @@
     "description": "",
     "version": "0.0.1",
     "icon": "Postman-Logs.png",
+    "license": "MIT",
+    "publisher": "xk0der",
     "author": { 
         "name": "xk0der",
         "email": "amit@xkoder.com",
