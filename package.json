@@ -3,7 +3,7 @@
 	"displayName": "Postman Log Syntax Highlighter",
 	"description": "",
 	"version": "0.3.0",
-	"icon": "res/Postman-Logs.png",
+	"icon": "./res/Postman-Logs.png",
 	"license": "MIT",
 	"publisher": "xk0der",
 	"author": {
