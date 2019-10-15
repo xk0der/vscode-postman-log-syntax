@@ -17,7 +17,7 @@ function handleDocOpen(activeDoc) {
             var isPostmanLog = 0;
             var maxLines = (lines.length > 5 ? 5 : lines.length);
             for(var idx = 0; idx < maxLines; idx++) {
-                if(lines[idx].match(/^\[[0-9]+\]\[[0-9]{13,13}\]\[[a-zA-Z]+\]\[[a-z]+\]\[[\[{"].*["}\]]\]$/)) {
+                if(/^\[[0-9]+\]\[[0-9]{13,13}\]\[[a-zA-Z]+\]\[[a-zA-Z]+\]\[.*\]/g.test(lines[idx])) {
                     isPostmanLog++;
                 }
             }

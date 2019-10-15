@@ -3,7 +3,7 @@
 	"displayName": "Postman Log Syntax Highlighter",
 	"description": "",
 	"version": "0.2.0",
-	"icon": "Postman-Logs.png",
+	"icon": "res/Postman-Logs.png",
 	"license": "MIT",
 	"publisher": "xk0der",
 	"author": {
@@ -31,7 +31,7 @@
 		"onLanguage:log",
 		"onLanguage:plaintext"
 	],
-	"main": "extension.js",
+	"main": "src/extension.js",
 	"contributes": {
 		"languages": [
 			{
