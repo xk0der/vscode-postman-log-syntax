@@ -4,8 +4,11 @@ This extension detects Postman log files and enables context aware syntax highli
 ![Demo](https://github.com/xk0der/vscode-postman-log-syntax/blob/master/demo.png?raw=true)
 
 # What is Postman?
-Postman is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.
-https://www.getpostman.com/
+[Postman](https://www.getpostman.com/?xk0der) is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.
+[Download Postman](https://www.getpostman.com/downloads/?xk0der)/
 
 # Download from
-https://marketplace.visualstudio.com/items?itemName=xk0der.vsc-postman-logs-syntax
+[Postman Log Syntax Highlighter](https://marketplace.visualstudio.com/items?itemName=xk0der.vsc-postman-logs-syntax)
+
+# You may also like
+[Postman Collection Syntax Highlighter](https://marketplace.visualstudio.com/items?itemName=xk0der.vsc-postman-collection-syntax)
