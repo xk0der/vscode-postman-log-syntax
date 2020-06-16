@@ -1,5 +1,55 @@
 const vscode = require('vscode');
 
+function findTimestamps(doc) {
+    let matches = new Array();
+    for(let idx = 0; idx < doc.lineCount; idx++) {
+        const line = doc.lineAt(idx);
+        regex = /^\[[0-9]+\]\[([0-9]+)\]/;
+        if(match = regex.exec(line.text)) {
+            let startPos = line.text.indexOf(match[1]);
+            let endPos = startPos + match[1].length;
+            matches.push({
+                ts: match[1],
+                dateText: new Date(match[1]*1),
+                position: {
+                    start: startPos,
+                    end: endPos,
+                    line: idx
+                }  
+            });
+        
+        }    
+    }
+    return matches;
+}
+
+function dummy() {
+
+}
+
+
+var xkCodelensProvider =  {
+
+    provideCodeLenses: async function (doc, token) {
+        console.log("Provider is registered"); 
+        const matches = findTimestamps(doc);
+        console.log(matches[1])
+       
+        cl = matches.map( match => new vscode.CodeLens(new vscode.Range(match.position.line, match.position.start, match.position.line, match.position.end), {
+            title: match.dateText,
+            command: 'extension.dummy',
+        }));
+        console.log(cl);
+        return cl;
+    },
+
+    resolveCodeLens: function (lense, token) {
+        return [];
+    }
+
+};
+
+
 
 function getActiveDoc() {
     try {
@@ -32,9 +82,14 @@ function handleDocOpen(activeDoc) {
 
 function activate(context) {
     context.subscriptions.push(vscode.workspace.onDidOpenTextDocument(handleDocOpen));
+    context.subscriptions.push(vscode.commands.registerCommand('extension.dummy', dummy));
     setTimeout( function () {
         handleDocOpen(getActiveDoc());
+        console.log('Registering CodeLense');
+        console.log(xkCodelensProvider);
+        vscode.languages.registerCodeLensProvider({language: "postman_log", scheme: "file"}, xkCodelensProvider)
     }, 1000);
+
 }
 
 function deactivate() {
