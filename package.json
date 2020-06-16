@@ -52,6 +52,12 @@
 				"scopeName": "source.postman_log",
 				"path": "./syntaxes/log.tmLanguage.json"
 			}
+		],
+		"commands": [
+			{
+				"title": "Postman Logs > Toggle Timestamps (Toggles CodeLense)",
+				"command": "extension.toggleTimestamps"
+			}
 		]
 	},
 	"__metadata": {

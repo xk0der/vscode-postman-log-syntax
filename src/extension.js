@@ -23,23 +23,28 @@ function findTimestamps(doc) {
     return matches;
 }
 
+function toggleTimestamps() {
+    var doc = getActiveDoc();
+    config = vscode.workspace.getConfiguration();
+    var val = config.inspect('editor.codeLens');
+    var value = val.globalValue !== undefined ? val.globalValue : val.defaultValue;
+    config.update('editor.codeLens', !value, true);
+}
+
 function dummy() {
 
 }
 
-
 var xkCodelensProvider =  {
 
     provideCodeLenses: async function (doc, token) {
-        console.log("Provider is registered"); 
         const matches = findTimestamps(doc);
-        console.log(matches[1])
        
         cl = matches.map( match => new vscode.CodeLens(new vscode.Range(match.position.line, match.position.start, match.position.line, match.position.end), {
             title: match.dateText,
+            tooltip: 'Hide timestamp (Toggles editor.Codelens)',
             command: 'extension.dummy',
         }));
-        console.log(cl);
         return cl;
     },
 
@@ -82,11 +87,10 @@ function handleDocOpen(activeDoc) {
 
 function activate(context) {
     context.subscriptions.push(vscode.workspace.onDidOpenTextDocument(handleDocOpen));
+    context.subscriptions.push(vscode.commands.registerCommand('extension.toggleTimestamps', toggleTimestamps));
     context.subscriptions.push(vscode.commands.registerCommand('extension.dummy', dummy));
     setTimeout( function () {
         handleDocOpen(getActiveDoc());
-        console.log('Registering CodeLense');
-        console.log(xkCodelensProvider);
         vscode.languages.registerCodeLensProvider({language: "postman_log", scheme: "file"}, xkCodelensProvider)
     }, 1000);
 
